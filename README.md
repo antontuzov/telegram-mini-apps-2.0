@@ -161,7 +161,8 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 
 ## Support 💬
-If you have any questions or need support, feel free to open an issue on GitHub or reach out to us at support@example.com.
+If you have any questions or need support, feel free to open an issue on GitHub or reach out to us at antontuzovj@gmail.com 
+
 
 
 ## Acknowledgments 🙏
