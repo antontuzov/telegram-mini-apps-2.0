@@ -31,14 +31,15 @@ ___
 To install the package, run the following command:
 
 ```bash
-npm install telegram-mini-apps
+npm install telegram-mini-apps-2.0
 ```
 
+___
 
 ## Usage  🛠️
 Importing the Package
 ```bash
-import { TelegramWebApp } from 'telegram-mini-apps';
+import { TelegramWebApp } from 'telegram-mini-apps-2.0';
 
 // Initialize the app
 TelegramWebApp.ready();
@@ -93,20 +94,32 @@ TelegramWebApp.Events.onEvent('viewportChanged', (data) => {
 });
 ```
 
+___
+
+
 
 ## Modules 📚
 
 Core Modules
 
 BackButton: Control the back button in the Mini App header. ↩️
+
 MainButton: Manage the main button at the bottom of the Mini App. 🎯
+
 HapticFeedback: Provide haptic feedback for user interactions. 📳
+
 CloudStorage: Store and retrieve user-specific data. ☁️
+
 BiometricManager: Handle biometric authentication. 🔒
+
 LocationManager: Access and manage device location. 🌍
+
 Accelerometer: Access accelerometer data. 📡
+
 DeviceOrientation: Access device orientation data. 🔄
+
 Gyroscope: Access gyroscope data. 🌀
+
 SettingsButton: Control the settings button in the Mini App. ⚙️
 
 
@@ -125,63 +138,8 @@ Orientation: Control screen orientation. 🔄
 
 HomeScreen: Add the app to the home screen. 🏠
 
-Events: Listen to and manage app events. 🎧
 
 
-## Events 🎧
-The following events are available for handling user interactions and app state changes:
-
-viewportChanged: Occurs when the visible section of the Mini App changes.
-
-mainButtonClicked: Occurs when the main button is clicked.
-
-backButtonClicked: Occurs when the back button is clicked.
-
-settingsButtonClicked: Occurs when the settings button is clicked.
-
-invoiceClosed: Occurs when an invoice is closed.
-
-qrTextReceived: Occurs when a QR code is scanned.
-
-clipboardTextReceived: Occurs when text is read from the clipboard.
-
-shareMessageSent: Occurs when a message is successfully shared. 📤✅
-
-shareMessageFailed: Occurs if sharing a message fails. 📤❌
-
-emojiStatusSet: Occurs when the emoji status is successfully set. 😎✅
-emojiStatusFailed: Occurs if setting the emoji status fails. 😎❌
-emojiStatusAccessRequested: Occurs when emoji status access is requested. 🔒
-fileDownloadRequested: Occurs when the user responds to a file download request. 📥
-
-
-
-Example: Listening to Events
-```bash
-TelegramWebApp.Events.onEvent('shareMessageSent', () => {
-  console.log('Message shared successfully!');
-});
-
-TelegramWebApp.Events.onEvent('shareMessageFailed', (data) => {
-  console.log('Failed to share message:', data.error);
-});
-
-TelegramWebApp.Events.onEvent('emojiStatusSet', () => {
-  console.log('Emoji status set successfully!');
-});
-
-TelegramWebApp.Events.onEvent('emojiStatusFailed', (data) => {
-  console.log('Failed to set emoji status:', data.error);
-});
-
-TelegramWebApp.Events.onEvent('emojiStatusAccessRequested', (data) => {
-  console.log('Emoji status access requested:', data.status);
-});
-
-TelegramWebApp.Events.onEvent('fileDownloadRequested', (data) => {
-  console.log('File download status:', data.status);
-});
-```
 
 
 
@@ -212,7 +170,7 @@ Thanks to Telegram for providing the Mini Apps platform. 📱
 Special thanks to all contributors who helped make this project better. 🌟
 
 Happy Coding! 🎉👨‍💻👩‍💻
-Copy
+
 
 
 
