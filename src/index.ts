@@ -1,5 +1,7 @@
 // src/index.ts
 
+// src/index.ts
+
 import {
   WebAppInitData,
   WebAppUser,
@@ -19,6 +21,11 @@ import {
   Invoice,
   QRScanner,
   Clipboard,
+  Share,
+  Fullscreen,
+  Orientation,
+  HomeScreen,
+  Events,
 } from './types';
 import { BackButton } from './modules/BackButton';
 import { MainButton } from './modules/MainButton';
@@ -27,12 +34,17 @@ import { CloudStorage as Storage } from './modules/CloudStorage';
 import { BiometricManager as Biometric } from './modules/BiometricManager';
 import { LocationManager as Location } from './modules/LocationManager';
 import { Accelerometer as Accel } from './modules/Accelerometer';
-import { DeviceOrientation as Orientation } from './modules/DeviceOrientation';
+//import { DeviceOrientation as OrientationModule } from './modules/DeviceOrientation';
 import { Gyroscope as Gyro } from './modules/Gyroscope';
 import { SettingsButton as Settings } from './modules/SettingsButton';
 import { Invoice as InvoiceModule } from './modules/Invoice';
 import { QRScanner as QRScannerModule } from './modules/QRScanner';
 import { Clipboard as ClipboardModule } from './modules/Clipboard';
+import { Share as ShareModule } from './modules/Share';
+import { Fullscreen as FullscreenModule } from './modules/Fullscreen';
+import { Orientation as OrientationModule } from './modules/Orientation';
+import { HomeScreen as HomeScreenModule } from './modules/HomeScreen';
+import { Events as EventsModule } from './modules/Events';
 
 declare global {
   interface Window {
@@ -96,6 +108,16 @@ declare global {
         //showScanQrPopup(params: QRScannerParams, callback?: (data: string) => void): void;
         closeScanQrPopup(): void;
         readTextFromClipboard(callback: (text: string | null) => void): void;
+        shareToStory(media_url: string, params?: StoryShareParams): void;
+        shareMessage(msg_id: string, callback?: (success: boolean) => void): void;
+        requestFullscreen(): void;
+        exitFullscreen(): void;
+        lockOrientation(): void;
+        unlockOrientation(): void;
+        addToHomeScreen(): void;
+        checkHomeScreenStatus(callback?: (status: string) => void): void;
+        onEvent(eventType: string, eventHandler: (data: any) => void): void;
+        offEvent(eventType: string, eventHandler: (data: any) => void): void;
         ready(): void;
         expand(): void;
         close(): void;
@@ -174,7 +196,7 @@ export class TelegramWebApp {
   }
 
   static get DeviceOrientation() {
-    return Orientation;
+    return OrientationModule;
   }
 
   static get Gyroscope() {
@@ -195,5 +217,25 @@ export class TelegramWebApp {
 
   static get Clipboard() {
     return ClipboardModule;
+  }
+
+  static get Share() {
+    return ShareModule;
+  }
+
+  static get Fullscreen() {
+    return FullscreenModule;
+  }
+
+  static get Orientation() {
+    return OrientationModule;
+  }
+
+  static get HomeScreen() {
+    return HomeScreenModule;
+  }
+
+  static get Events() {
+    return EventsModule;
   }
 }

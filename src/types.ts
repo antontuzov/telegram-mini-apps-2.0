@@ -1,4 +1,4 @@
-// src/types.ts
+
 
 export interface WebAppInitData {
   query_id?: string;
@@ -52,7 +52,6 @@ export interface ThemeParams {
   subtitle_text_color?: string;
   destructive_text_color?: string;
 }
-
 export interface PopupParams {
   title?: string;
   message: string;
@@ -181,8 +180,46 @@ export interface QRScanner {
 }
 
 export interface QRScannerParams {
-  text?: string; // Optional text to display in the QR scanner popup
+  text?: string;
 }
+
 export interface Clipboard {
   readText(callback: (text: string | null) => void): void;
+}
+
+export interface Share {
+  shareToStory(media_url: string, params?: StoryShareParams): void;
+  shareMessage(msg_id: string, callback?: (success: boolean) => void): void;
+}
+
+export interface StoryShareParams {
+  text?: string;
+  widget_link?: StoryWidgetLink;
+}
+
+export interface StoryWidgetLink {
+  url: string;
+  name?: string;
+}
+
+export interface Fullscreen {
+  requestFullscreen(): void;
+  exitFullscreen(): void;
+  isFullscreen: boolean;
+}
+
+export interface Orientation {
+  lockOrientation(): void;
+  unlockOrientation(): void;
+  isOrientationLocked: boolean;
+}
+
+export interface HomeScreen {
+  addToHomeScreen(): void;
+  checkHomeScreenStatus(callback?: (status: string) => void): void;
+}
+
+export interface Events {
+  onEvent(eventType: string, eventHandler: (data: any) => void): void;
+  offEvent(eventType: string, eventHandler: (data: any) => void): void;
 }

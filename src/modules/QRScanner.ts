@@ -1,5 +1,4 @@
 // src/modules/QRScanner.ts
-
 import { QRScannerParams } from "../types";
 
 export class QRScanner {

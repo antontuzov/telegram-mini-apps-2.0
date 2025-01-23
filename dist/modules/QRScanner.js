@@ -1,5 +1,4 @@
 "use strict";
-// src/modules/QRScanner.ts
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.QRScanner = void 0;
 class QRScanner {
