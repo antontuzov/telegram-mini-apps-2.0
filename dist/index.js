@@ -2,6 +2,11 @@
 // src/index.ts
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TelegramWebApp = void 0;
+const BackButton_1 = require("./modules/BackButton");
+const MainButton_1 = require("./modules/MainButton");
+const HapticFeedback_1 = require("./modules/HapticFeedback");
+const CloudStorage_1 = require("./modules/CloudStorage");
+const BiometricManager_1 = require("./modules/BiometricManager");
 class TelegramWebApp {
     static initData() {
         return window.Telegram.WebApp.initDataUnsafe;
@@ -33,11 +38,23 @@ class TelegramWebApp {
     static showConfirm(message, callback) {
         window.Telegram.WebApp.showConfirm(message, callback);
     }
-    static hapticFeedback() {
-        return window.Telegram.WebApp.HapticFeedback;
+    static get BackButton() {
+        return BackButton_1.BackButton;
     }
-    static cloudStorage() {
-        return window.Telegram.WebApp.CloudStorage;
+    static get MainButton() {
+        return MainButton_1.MainButton;
+    }
+    static get HapticFeedback() {
+        return HapticFeedback_1.HapticFeedback;
+    }
+    static get CloudStorage() {
+        return CloudStorage_1.CloudStorage;
+    }
+    static get BiometricManager() {
+        return BiometricManager_1.BiometricManager;
+    }
+    static getLocation(callback) {
+        window.Telegram.WebApp.LocationManager.getLocation(callback);
     }
 }
 exports.TelegramWebApp = TelegramWebApp;

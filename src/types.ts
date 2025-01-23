@@ -74,3 +74,48 @@ export interface ThemeParams {
     getItem(key: string, callback: (error: Error | null, value: string | null) => void): void;
     removeItem(key: string, callback?: (error: Error | null, success: boolean) => void): void;
   }
+
+  export interface BiometricManager {
+    isInited: boolean;
+    isBiometricAvailable: boolean;
+    biometricType: string;
+    isAccessRequested: boolean;
+    isAccessGranted: boolean;
+    isBiometricTokenSaved: boolean;
+    deviceId: string;
+    init(callback?: () => void): void;
+    requestAccess(params: BiometricRequestAccessParams, callback?: (granted: boolean) => void): void;
+    authenticate(params: BiometricAuthenticateParams, callback?: (authenticated: boolean, token?: string) => void): void;
+    updateBiometricToken(token: string, callback?: (updated: boolean) => void): void;
+    openSettings(): void;
+  }
+  
+  export interface BiometricRequestAccessParams {
+    reason?: string;
+  }
+  
+  export interface BiometricAuthenticateParams {
+    reason?: string;
+  }
+  
+  export interface LocationData {
+    latitude: number;
+    longitude: number;
+    altitude: number | null;
+    course: number | null;
+    speed: number | null;
+    horizontal_accuracy: number | null;
+    vertical_accuracy: number | null;
+    course_accuracy: number | null;
+    speed_accuracy: number | null;
+  }
+  
+  export interface LocationManager {
+    isInited: boolean;
+    isLocationAvailable: boolean;
+    isAccessRequested: boolean;
+    isAccessGranted: boolean;
+    init(callback?: () => void): void;
+    getLocation(callback: (location: LocationData | null) => void): void;
+    openSettings(): void;
+  }
