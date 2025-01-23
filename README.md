@@ -35,7 +35,7 @@ npm install telegram-mini-apps
 ```
 
 
-##Usage 🛠️
+## Usage  🛠️
 Importing the Package
 ```bash
 import { TelegramWebApp } from 'telegram-mini-apps';
@@ -92,7 +92,10 @@ TelegramWebApp.Events.onEvent('viewportChanged', (data) => {
   console.log('Viewport changed:', data);
 });
 ```
-#Modules 📚
+
+
+## Modules 📚
+
 Core Modules
 
 BackButton: Control the back button in the Mini App header. ↩️
@@ -106,7 +109,8 @@ DeviceOrientation: Access device orientation data. 🔄
 Gyroscope: Access gyroscope data. 🌀
 SettingsButton: Control the settings button in the Mini App. ⚙️
 
-#Utility Modules
+
+## Utility Modules
 Invoice: Open and manage invoices. 💳
 
 QRScanner: Scan QR codes. 📷
@@ -123,7 +127,8 @@ HomeScreen: Add the app to the home screen. 🏠
 
 Events: Listen to and manage app events. 🎧
 
-Events 🎧
+
+## Events 🎧
 The following events are available for handling user interactions and app state changes:
 
 viewportChanged: Occurs when the visible section of the Mini App changes.
@@ -145,11 +150,8 @@ shareMessageSent: Occurs when a message is successfully shared. 📤✅
 shareMessageFailed: Occurs if sharing a message fails. 📤❌
 
 emojiStatusSet: Occurs when the emoji status is successfully set. 😎✅
-
 emojiStatusFailed: Occurs if setting the emoji status fails. 😎❌
-
 emojiStatusAccessRequested: Occurs when emoji status access is requested. 🔒
-
 fileDownloadRequested: Occurs when the user responds to a file download request. 📥
 
 
@@ -180,7 +182,10 @@ TelegramWebApp.Events.onEvent('fileDownloadRequested', (data) => {
   console.log('File download status:', data.status);
 });
 ```
-Contributing 🤝
+
+
+
+## Contributing 🤝
 
 We welcome contributions! If you'd like to contribute to this project, please follow these steps:
 
@@ -192,13 +197,16 @@ Push your branch to your fork. 🚀
 Submit a pull request. 🎉
 
 ```
-#License 📄
+
+## License 📄
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-#Support 💬
+
+## Support 💬
 If you have any questions or need support, feel free to open an issue on GitHub or reach out to us at support@example.com.
 
-A#cknowledgments 🙏
+
+## Acknowledgments 🙏
 Thanks to Telegram for providing the Mini Apps platform. 📱
 
 Special thanks to all contributors who helped make this project better. 🌟
