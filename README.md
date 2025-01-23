@@ -22,26 +22,10 @@ A powerful and feature-rich TypeScript-based NPM package for interacting with Te
 - **Event Handling**: Listen to and manage app events. 🎧
 
 ---
-
-## Installation ⚙️
-
-To install the package, run the following command:
-
-```bash
-npm install telegram-mini-apps
-
----
-
-
-
-
-
 ## Usage 🛠️
-
 Importing the Package
 
 
-```bash
 import { TelegramWebApp } from 'telegram-mini-apps';
 
 ##Basic Usage
